@@ -64,8 +64,8 @@ def gettvsou_epg(playtype):
                 url = node.xpath('./a/@href')[0]
                 playname = node.xpath('./a/i/text()')[0]
                 playname = re.sub(u'频道|电视台|-', '', playname)
- 
-                channellist[playname] = url  
+                if url and playname:
+                    channellist[playname] = url  
             except:
                 pass
     except Exception,e:
