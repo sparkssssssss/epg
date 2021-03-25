@@ -133,9 +133,10 @@ def gettvsou_epg(playtype):
 def getallow(pro,key):
     sports8_allows = ['经','公共','都市','生活','CCTV','卫视','SITV','DOX','影','闻','少儿']
     tvmao_allows = [ "安徽卫视","北京卫视","重庆卫视","东南卫视","甘肃卫视","广东卫视","深圳卫视","广西卫视","贵州卫视","海南卫视","河北卫视","黑龙江卫视","河南卫视","湖北卫视","湖南卫视","江苏卫视","江西卫视","吉林卫视","辽宁卫视","内蒙古卫视","宁夏卫视","山西卫视","山东卫视","东方卫视","陕西卫视","四川卫视","天津卫视","新疆卫视","云南卫视","浙江卫视","青海卫视","延边卫视","兵团卫视","黄河卫视","三沙卫视" ]
-    for i in pro + "_allows":
-        if i in key:
-            return True
+    if pro == 'tvmao':
+        for i in tvmao_allows:
+            if i in key:
+                return True
     return False
 
 def gettvsports8_epg(cid):
